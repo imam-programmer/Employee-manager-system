@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const Login = ({handleLogin}) => {
+  // console.log(handleLogin)
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
   const submitHandler = (e) => {
+    handleLogin(email,password)
     e.preventDefault();
-    console.log("submit done");
+    // console.log("submit done");
   };
   return (
     <div className="flex h-screen w-screen items-center justify-center">
@@ -13,8 +16,8 @@ const Login = () => {
         <form
           onSubmit={(e) => {
             submitHandler(e);
-            console.log("email is",email)
-             console.log("passwor is",password)
+            // console.log("email is",email)
+            //  console.log("passwor is",password)
              setEmail("")
              setPassword("")
           }}
