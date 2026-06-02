@@ -3,35 +3,35 @@ import Header from "../../other/Header";
 
 const AdminDashboard = () => {
   return (
-    <div className="h-screen w-full p-10">
+    <div className="h-screen w-full p-10 ">
       <Header />
-      <div>
-        <form className="flex flex-wrap w-full bg-amber-200 items-start justify-between">
+      <div className="mt-10">
+        <form className="rounded-2xl flex flex-wrap w-full bg-[#333] px-10 py-5 items-start justify-between">
             <div className="w-1/2">
 
-          <div>
+          <div className="mb-2">
             <h3>Task Title</h3>
-            <input type="text" placeholder="Make a ui design" />
+            <input className="border w-[70%] px-2 rounded" type="text" placeholder="Make a ui design" />
           </div>
-          <div>
+          <div className="mb-2">
             <h3>Date</h3>
-            <input type="date" />
+            <input className="border w-[70%] px-2 rounded"  type="date" />
           </div>
-          <div>
+          <div className="mb-2">
             <h3>Asign to</h3>
-            <input type="text " placeholder="employe name" />
+            <input className="border w-[70%] px-2 rounded"  type="text " placeholder="employe name" />
           </div>
-          <div>
+          <div className="mb-2">
             <h3>Category</h3>
-            <input type="text" placeholder="design,dev,etc" />
+            <input className="border w-[70%] px-2 rounded"  type="text" placeholder="design,dev,etc" />
           </div>
             </div>
-          <div className="2/2">
+          <div className="w-1/2">
             <h3>Description</h3>
-            <textarea name="" id=""></textarea>
+            <textarea className="border w-full h-[150px] rounded"  name="" id=""></textarea>
+          <button className="w-full mt-1 cursor-pointer active:scale-90 transition bg-green-600 rounded py-2">Create Task</button>
           </div>
           
-          <button>Create Task</button>
         </form>
       </div>
     </div>
