@@ -1,7 +1,7 @@
 import React from "react";
 
 const AcceptTask = ({ data }) => {
-  console.log(data.taskTitle);
+
   return (
     <div className="h-full bg-red-400 w-75 p-5 rounded-2xl shrink-0">
       <div className="flex justify-between items-center">

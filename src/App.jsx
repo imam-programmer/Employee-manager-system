@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
-import Login from "./conponents/Auth/Login";
-import EmployeeDashboard from "./conponents/Dashboard/EmployeeDashboard";
-import AdminDashboard from "./conponents/Dashboard/AdminDashboard";
+import Login from "./components/Auth/Login";
+import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard";
+import AdminDashboard from "./components/Dashboard/AdminDashboard";
 import { getLocalStorage, setLocalStorage } from "./utils/LocalStorage";
 import { AuthContext } from "./context/AuthProvider";
 
 const App = () => {
   const [user, setUser] = useState(null);
-    const AuthData= useContext(AuthContext);
+    const [userData,setUserData]= useContext(AuthContext);
     const [loggedInUserData, setloggedInUserData] = useState(null)
 
 useEffect(() => {
@@ -27,8 +27,8 @@ if(loggedInUser){
       setUser("admin");
       localStorage.setItem("loggedInUser",JSON.stringify({role:"admin"}))
     } 
-    else if (AuthData) {
-      const employee=AuthData.employee.find((e)=>email==e.email && e.password == password)
+    else if (userData) {
+      const employee=userData.find((e)=>email==e.email && e.password == password)
       if(employee){ 
         setUser("employee");
         setloggedInUserData(employee)
